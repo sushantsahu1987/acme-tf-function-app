@@ -1,0 +1,19 @@
+name: "Create Function App on Azure"
+
+on:
+    workflow_dispatch:
+
+jobs:
+    terraform:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v3
+            
+            - name: Setup Terraform
+              uses: hashicorp/setup-terraform@v1
+              with:
+                cli_config_credentials_token: ${{ secrets.JUMPCLOUD_API_TOKEN }}
+      
+
+
