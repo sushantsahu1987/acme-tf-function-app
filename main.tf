@@ -48,8 +48,10 @@ resource "azurerm_linux_function_app" "acme-test-function-app" {
   storage_account_access_key = azurerm_storage_account.acme-test-storage-acc.primary_access_key
   service_plan_id            = azurerm_service_plan.acme-test-sp.id
 
-  site_config {}
-  application_stack {
-    node_version = 20
+  site_config {
+     application_stack {
+      node_version = 20
+    }
   }
+ 
 }
