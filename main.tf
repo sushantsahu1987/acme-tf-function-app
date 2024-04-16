@@ -49,4 +49,7 @@ resource "azurerm_linux_function_app" "acme-test-function-app" {
   service_plan_id            = azurerm_service_plan.acme-test-sp.id
 
   site_config {}
+  application_stack {
+    node_version = 20
+  }
 }
